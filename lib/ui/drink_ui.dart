@@ -21,6 +21,7 @@ class DrinkUI{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDrink(md: drink)));
                 },
                 title: Text(drink.name, style: TextStyle(fontWeight: FontWeight.bold)),
+                trailing: Text(drink.price, style: TextStyle(fontWeight: FontWeight.bold)),
                 leading: CircleAvatar(backgroundColor: Colors.black12, backgroundImage: AssetImage(drink.image), radius: 35),
               ),
             ),

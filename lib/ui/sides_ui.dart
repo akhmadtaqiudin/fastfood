@@ -21,6 +21,7 @@ class SidesUI{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DetailSides(ms: sides)));
                 },
                 title: Text(sides.name, style: TextStyle(fontWeight: FontWeight.bold)),
+                trailing: Text(sides.price, style: TextStyle(fontWeight: FontWeight.bold)),
                 leading: CircleAvatar(backgroundColor: Colors.black12, backgroundImage: AssetImage(sides.image), radius: 35),
               ),
             ),

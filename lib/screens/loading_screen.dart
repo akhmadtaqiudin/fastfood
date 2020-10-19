@@ -17,6 +17,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         title: Text('Selamat Datang Selamat Menikmati',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontFamily: 'DancingScript',
             color: Colors.white,
             fontSize: 20.0
           )

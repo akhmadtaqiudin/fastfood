@@ -14,7 +14,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Food And Drink Menu'),backgroundColor: Colors.teal),
+      appBar: AppBar(
+          title: Text('Food And Drink Menu', style: TextStyle(fontFamily: 'DancingScript', fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.teal
+      ),
       body: ListView(
         children: [
           Container(

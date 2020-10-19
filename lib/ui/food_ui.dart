@@ -21,6 +21,7 @@ class FoodUI{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DetailFood(mf: food)));
                 },
                 title: Text(food.name, style: TextStyle(fontWeight: FontWeight.bold)),
+                trailing: Text(food.price, style: TextStyle(fontWeight: FontWeight.bold)),
                 leading: CircleAvatar(backgroundColor: Colors.black12, backgroundImage: AssetImage(food.image), radius: 35),
               ),
             ),

@@ -9,7 +9,10 @@ class DrinkScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Drink Menu'), backgroundColor: Colors.teal),
+      appBar: AppBar(
+          title: Text('Drink Menu', style: TextStyle(fontFamily: 'DancingScript', fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.teal
+      ),
       body: _ui.buildView(),
     );
   }
@@ -25,7 +28,10 @@ class DetailDrink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(md.name), backgroundColor: Colors.teal),
+      appBar: AppBar(
+          title: Text(md.name, style: TextStyle(fontFamily: 'DancingScript', fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.teal
+      ),
       body: _ui.buildDetailFood(md, context),
     );
   }

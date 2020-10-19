@@ -21,6 +21,7 @@ class SaladUI{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DetailSalad(ms: salad)));
                 },
                 title: Text(salad.name, style: TextStyle(fontWeight: FontWeight.bold)),
+                trailing: Text(salad.price, style: TextStyle(fontWeight: FontWeight.bold)),
                 leading: CircleAvatar(backgroundColor: Colors.black12, backgroundImage: AssetImage(salad.image), radius: 35),
               ),
             ),
