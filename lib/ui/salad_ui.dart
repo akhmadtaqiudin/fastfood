@@ -18,7 +18,7 @@ class SaladUI{
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailSalad(ms: salad)));
+                  Navigator.pushNamed(context, DetailSalad.id, arguments: salad);
                 },
                 title: Text(salad.name, style: TextStyle(fontWeight: FontWeight.bold)),
                 trailing: Text(salad.price, style: TextStyle(fontWeight: FontWeight.bold)),

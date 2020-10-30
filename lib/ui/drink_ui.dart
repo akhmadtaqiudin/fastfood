@@ -4,25 +4,47 @@ import 'package:fastfood/screens/drink_screen.dart';
 import 'package:flutter/material.dart';
 
 class DrinkUI{
-  ListView buildView(){
-    return ListView.builder(
+  Widget buildView(){
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemCount: DataDrink.itemCount,
       itemBuilder: (context, index){
         ModelDrink drink = DataDrink.getItemDrink(index);
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Card(
-            elevation: 7,
-            shadowColor: Colors.teal,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDrink(md: drink)));
-                },
-                title: Text(drink.name, style: TextStyle(fontWeight: FontWeight.bold)),
-                trailing: Text(drink.price, style: TextStyle(fontWeight: FontWeight.bold)),
-                leading: CircleAvatar(backgroundColor: Colors.black12, backgroundImage: AssetImage(drink.image), radius: 35),
+        return InkWell(
+          splashColor: Colors.teal,
+          onTap: () {
+            Navigator.pushNamed(context, DetailDrink.id, arguments: drink);
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Card(
+              elevation: 7,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20)
+              ),
+              shadowColor: Colors.teal,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Hero(
+                    tag: drink.name,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Image.asset(drink.image),
+                      )
+                    ),
+                  ),
+                  Text(
+                    drink?.name ?? "no title",
+                    style: TextStyle(
+                        fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
             ),
           ),

@@ -14,6 +14,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // ignore: missing_return
+      onGenerateRoute: (settings){
+        if(settings.name == DetailDrink.id){
+          return MaterialPageRoute(builder: (context){
+            return DetailDrink(md: settings.arguments);
+          });
+        } else if(settings.name == DetailFood.id){
+          return MaterialPageRoute(builder: (context){
+            return DetailFood(mf: settings.arguments);
+          });
+        }else if(settings.name == DetailSalad.id){
+          return MaterialPageRoute(builder: (context){
+            return DetailSalad(ms: settings.arguments);
+          });
+        }else if(settings.name == DetailSides.id){
+          return MaterialPageRoute(builder: (context){
+            return DetailSides(ms: settings.arguments);
+          });
+        }
+      },
       initialRoute: LoadingScreen.id,
       routes: {
         LoadingScreen.id: (context) => LoadingScreen(),
@@ -21,11 +41,7 @@ class MyApp extends StatelessWidget {
         DrinkScreen.id: (context) => DrinkScreen(),
         FoodScreen.id: (context) => FoodScreen(),
         SaladScreen.id: (context) => SaladScreen(),
-        SidesScreen.id: (context) => SidesScreen(),
-        DetailDrink.id: (context) => DetailDrink(),
-        DetailFood.id: (context) => DetailFood(),
-        DetailSalad.id: (context) => DetailSalad(),
-        DetailSides.id: (context) => DetailSides()
+        SidesScreen.id: (context) => SidesScreen()
       },
     );
   }

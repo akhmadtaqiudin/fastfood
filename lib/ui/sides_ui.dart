@@ -18,7 +18,7 @@ class SidesUI{
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailSides(ms: sides)));
+                  Navigator.pushNamed(context, DetailSides.id, arguments: sides);
                 },
                 title: Text(sides.name, style: TextStyle(fontWeight: FontWeight.bold)),
                 trailing: Text(sides.price, style: TextStyle(fontWeight: FontWeight.bold)),
